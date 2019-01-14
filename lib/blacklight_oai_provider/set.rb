@@ -1,8 +1,8 @@
 module BlacklightOaiProvider
   class Set
     class << self
-      # The controller, used to construct solr queries
-      attr_accessor :controller
+      # The service, used to construct solr queries
+      attr_accessor :service
 
       # Solr field configuration for each set
       # Fields must be indexed
