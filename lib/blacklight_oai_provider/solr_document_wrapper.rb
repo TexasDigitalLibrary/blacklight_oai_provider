@@ -10,13 +10,7 @@ module BlacklightOaiProvider
       @limit           = options[:limit] || 15
       @set             = options[:set_model] || BlacklightOaiProvider::SolrSet
 
-      @config = Blacklight::Configuration.new.configure do |config|
-        config.default_solr_params = {
-          fl: '*',
-          rows: @limit
-        }
-      end
-
+      @config = controller.blacklight_config
       @params = {}
       @service = @controller.search_service_class.new(config: @config, user_params: @params)
 
